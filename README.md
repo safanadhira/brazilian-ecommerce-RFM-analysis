@@ -1,5 +1,14 @@
 # Olist Brazilian E-Commerce: Growth Analytics & Customer Segmentation
 
+## Dataset 
+The data used in this project is sourced from the **Olist Brazilian E-Commerce Dataset**, a real commercial dataset containing 100k anonymized orders from 2016 to 2018.
+
+* **Data Source:** You can download the official dataset directly on [Kaggle - Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce).
+
+### Data Preprocessing Notes:
+* **Geolocation Aggregation:** To prevent data explosion during merges, the `geolocation_dataset` was aggregated by `geolocation_zip_code_prefix` using mean coordinates before joining with customer and seller datasets.
+* **Missing Value Strategy:** Numeric missing values were imputed using the column `median` to mitigate outlier skewness, while categorical gaps were filled with `'unknown'` to preserve sample sizes for analysis.
+
 ## Summary
 This project delivers a data-driven analysis of Olist's Brazilian e-commerce operations, focusing on transforming raw transactional data into actionable business strategies. By engineering an end-to-end data pipeline in Python, this analysis uncovers critical growth engines, exposes logistical bottlenecks in Brazil's urban landscape, and builds an advanced **RFM (Recency, Frequency, Monetary) Customer Segmentation** model to optimize marketing spend and improve retention.
 
