@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Custom Ignored Files for Data Analysis Project
+*.csv
+*.xlsx
