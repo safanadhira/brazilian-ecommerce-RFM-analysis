@@ -500,3 +500,18 @@ rfm['Segment'] = rfm.apply(segment_customer, axis=1)
 
 print("--- RFM Customer Segmentation Counts ---")
 print(rfm['Segment'].value_counts())
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(10, 6))
+# Menghitung jumlah pelanggan di setiap segmen
+segment_counts = rfm['Segment'].value_counts()
+sns.barplot(x=segment_counts.values, y=segment_counts.index, palette='magma')
+plt.title('Customer Segmentation Breakdown (RFM)')
+plt.xlabel('Number of Customers')
+plt.ylabel('Segment')
+
+# Simpan grafik
+plt.savefig('rfm_segments.png', dpi=300, bbox_inches='tight')
+plt.show()
